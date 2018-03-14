@@ -6,7 +6,7 @@
                 <img src="img/logo.png" alt="GoPetie Logo" class="img-responsive gologo">
             </li>
             <li class="adv_center">
-                <img src="img/user.png" class="img-responsive side-bar-img" >
+                <img src="/img/user.png" class="img-responsive side-bar-img" >
 
                 <span class="white_color-text"><h4>Eric Garcetti</h4></span>
                 <span class="white_color-text"><h5>Los Angeles, CA</h5></span>
@@ -14,6 +14,11 @@
             <li>
                 <a href="history.html" >
                     <i class="fa fa-file-text-o" style="margin-left: -21px;"></i> History</a>
+            </li>
+            </li>
+            <li>
+                <a href="URL::to('/posts/create')" >
+                    <i class="fa fa-file-text-o" style="margin-left: -21px;"></i>Create Blog</a>
             </li>
             </li>
             <li>

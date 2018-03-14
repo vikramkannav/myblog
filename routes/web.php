@@ -25,3 +25,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/{id}/edit', "UserController@edit");
 Route::put('/{id}/update', "UserController@update")->name('endUserUpdate');
 Route::get('/{id}/change-password', "UserController@updatePassword");
+
+Route::get('/posts/create', "PostController@create")->name('postCreate');
+Route::post('/posts-entry', 'PostController@store')->name('add-post');

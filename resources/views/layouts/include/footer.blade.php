@@ -12,6 +12,6 @@
 
     <p class="navbar-text pull-right ">
 
-        © 2017 Copyright GoPetie. All Rights Reserved.
+        © 2017 Copyright India. All Rights Reserved.
     </p>
 </div>

@@ -40,7 +40,7 @@
 
         </div>
         <div class="clearfix">&nbsp;</div>
-        @yield('content')
+
 
     </div>
 
