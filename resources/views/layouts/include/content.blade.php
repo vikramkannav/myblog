@@ -12,7 +12,7 @@
             </div>
 
 
-            <div class="col-xs-8 col-sm-8 text-center"><h3>Pet License Application</h3>
+            <div class="col-xs-8 col-sm-8 text-center"><h3>My India</h3>
 
             </div>
             <!--add for logout--------------->
@@ -30,7 +30,7 @@
 
         <div class="row">
             <div class="col-md-12 adv_center">
-                <img src="/img/Seal_of_Los_Angeles,_California.png" alt="GoPetie Logo" class="img-responsive">
+                <img src="/img/logo.png" alt="GoPetie Logo" class="img-responsive">
 
 
                 <h3>Welcome to the .</h3>

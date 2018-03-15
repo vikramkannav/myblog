@@ -1,14 +1,7 @@
 @extends('home')
-
-@include('layouts.include.header')
-
 @section('content')
-    <div id="wrapper">
-        @include('layouts.include.sidebar')
-        @include('layouts.include.content')
-        @include('layouts.include.footer');
-    </div>
-<div class="container">
+    <div class="row">
+        <div class="col-md-12 content_area">
 
    <h1>Create Post</h1>
     <meta name="csrf-token" content="{{csrf_token() }}">
@@ -24,17 +17,17 @@
 
     <div class="form-group">
         {{ Form::label('subject', 'Subject') }}
-        {{ Form::text('subject', Input::old('subject'), array('class' => 'form-control')) }}
+        {{ Form::text('subject', Input::old('subject'), array('class' => 'form-control','maxlength'=>'55')) }}
     </div>
 
     <div class="form-group">
         {{ Form::label('description', 'Description') }}
-        {{ Form::textarea('description', Input::old('description'), array('class' => 'form-control')) }}
+        {{ Form::textarea('description', Input::old('description'), array('class' => 'form-control','maxlength'=>'55'))}}
     </div>
 
     {{ Form::submit('Create Post!', array('class' => 'btn btn-primary')) }}
 
     {{ Form::close() }}
-
+        </div>
 </div>
 @endsection

@@ -93,7 +93,7 @@
 
                 <div class="container-login100-form-btn m-t-17">
                     <button type="submit" class="login100-form-btn">
-                        Sign In
+                        Sign Up
                     </button>
                 </div>
 
@@ -102,8 +102,8 @@
 							Not a member?
 						</span>
 
-                    <a href="#" class="txt2 bo1">
-                        Sign up now
+                    <a href="{{route('login')}}" class="txt2 bo1">
+                        Sign In
                     </a>
                 </div>
             </form>
