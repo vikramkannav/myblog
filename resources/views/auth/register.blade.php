@@ -32,7 +32,7 @@
 <div class="limiter">
     <div class="container-login100" style="background-image: url('img/bg-01.jpg');">
         <div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
-            <form class="login100-form validate-form flex-sb flex-w" method="POST" action="{{ route('login') }}">
+            <form class="login100-form validate-form flex-sb flex-w" method="POST" action="{{ route('register') }}">
                 @csrf
                 <span class="login100-form-title p-b-53">
 						Sign In With
@@ -54,7 +54,7 @@
 						</span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate = "Username is required">
-                    <input class="input100" type="text" name="username" >
+                    <input id="name" type="text" class="input100  form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
                     <span class="focus-input100"></span>
                 </div>
 
@@ -64,7 +64,8 @@
 						</span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate = "Username is required">
-                    <input class="input100" type="text" name="username" >
+                    <input id="email" type="email" class="input100 form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+
                     <span class="focus-input100"></span>
                 </div>
 
@@ -74,7 +75,7 @@
 						</span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate = "Username is required">
-                    <input class="input100" type="text" name="username" >
+                    <input id="password" type="password" class="input100 form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
                     <span class="focus-input100"></span>
                 </div>
 
@@ -84,17 +85,14 @@
 							Confirm Password
 						</span>
 
-                    <a href="#" class="txt2 bo1 m-l-5">
-                        Forgot?
-                    </a>
-                </div>
+               </div>
                 <div class="wrap-input100 validate-input" data-validate = "Password is required">
-                    <input class="input100" type="password" name="pass" >
+                    <input id="password-confirm" type="password" class="input100 form-control" name="password_confirmation" required>
                     <span class="focus-input100"></span>
                 </div>
 
                 <div class="container-login100-form-btn m-t-17">
-                    <button class="login100-form-btn">
+                    <button type="submit" class="login100-form-btn">
                         Sign In
                     </button>
                 </div>
@@ -109,6 +107,8 @@
                     </a>
                 </div>
             </form>
+            <a href="#" class="txt2 bo1 m-l-5">
+                Forgot? </a>
         </div>
     </div>
 </div>

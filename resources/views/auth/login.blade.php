@@ -54,7 +54,8 @@
 						</span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate = "Username is required">
-                    <input class="input100" type="text" name="username" >
+                    <input id="email" type="email" class="input100 form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+
                     <span class="focus-input100"></span>
                 </div>
 
@@ -69,7 +70,7 @@
                     </a>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate = "Password is required">
-                    <input class="input100" type="password" name="pass" >
+                    <input id="password" type="password" class="input100 form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
                     <span class="focus-input100"></span>
                 </div>
 
