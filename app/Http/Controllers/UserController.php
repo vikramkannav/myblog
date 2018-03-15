@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+
 
 class UserController extends Controller
 {
@@ -68,7 +70,10 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-       dd($request->all());
+       $input = $request->all();
+       $user = User::find($id);
+       $user->update($input);
+        return redirect('home');
     }
 
     /**

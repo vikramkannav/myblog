@@ -12,13 +12,13 @@
                 <span class="white_color-text"><h5>Los Angeles, CA</h5></span>
             </li>
             <li>
-                <a href="history.html" >
-                    <i class="fa fa-file-text-o" style="margin-left: -21px;"></i> History</a>
+                <a href="{{ URL::to('posts') }}" >
+                    <i class="fa fa-file-text-o" style="margin-left: -21px;"></i> My Posts</a>
             </li>
             </li>
             <li>
-                <a href="URL::to('/posts/create')" >
-                    <i class="fa fa-file-text-o" style="margin-left: -21px;"></i>Create Blog</a>
+                <a href="{{ URL::to('posts/create') }}" >
+                    <i class="fa fa-file-text-o" style="margin-left: -21px;"></i>Create Post</a>
             </li>
             </li>
             <li>
@@ -26,12 +26,7 @@
                     <i class="fa fa-history" style="margin-left: -21px;"></i>Messages
                 </a>
             </li>
-            <li>
-                <a href="license_form.html" >
-                    <i class="icon-envelope-open icons"></i>License Form</a>
-            </li>
-
-            <li >
+              <li >
                 <a href="{{URL::to(Auth::user()->id."/edit")}}" >
                     <i class="fa fa-paw" style="margin-left: -21px;"></i> My Account</a>
             </li>

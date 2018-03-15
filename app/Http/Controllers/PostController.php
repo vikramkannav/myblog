@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
+use View;
+use HTML;
+use Illuminate\Support\Facades\Input;
 
 class PostController extends Controller
 {
@@ -14,7 +17,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::all();
+        return view('Posts.index')->with('posts',$posts);
     }
 
     /**
@@ -24,7 +28,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('user.user_post_create');
+       return View::make('Posts.create');
     }
 
     /**
@@ -35,7 +39,10 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-       dd('test');
+      $posts = new Post($request->all());
+      $posts->save();
+      return redirect('home');
+
     }
 
     /**
@@ -44,9 +51,10 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show($id)
     {
-        //
+        $post = Post::find($id);
+        return View::make('Posts.show')->with('post'.$post);
     }
 
     /**
@@ -55,9 +63,10 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit($id)
     {
-        //
+        $post = Post::find($id);
+        return View::make('Posts.edit')->with('post',$post);
     }
 
     /**
@@ -67,9 +76,13 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, $id)
     {
-        //
+        $input=$request->all();
+        $post = Post::find($id);
+        $post->update($input);
+        return redirect('home');
+
     }
 
     /**

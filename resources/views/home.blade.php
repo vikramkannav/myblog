@@ -6,6 +6,6 @@
     <div id="wrapper">
          @include('.layouts.include.sidebar')
          @include('.layouts.include.content')
-         @include('layouts.include.footer');
+         @include('.layouts.include.footer');
     </div>
 @endsection
