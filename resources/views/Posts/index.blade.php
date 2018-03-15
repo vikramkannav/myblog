@@ -1,5 +1,6 @@
 
 @extends('home')
+@include('layouts.include.header')
 @section('content')
 <div class="row">
     <div class="col-md-12 content_area">

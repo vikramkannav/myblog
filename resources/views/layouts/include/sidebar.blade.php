@@ -3,7 +3,7 @@
         <ul class="sidebar-nav nav">
 
             <li class="logo adv_center">
-                <img src="img/logo.png" alt="GoPetie Logo" class="img-responsive gologo">
+                <img src="/img/logo.png" alt="GoPetie Logo" class="img-responsive gologo">
             </li>
             <li class="adv_center">
                 <img src="/img/user.png" class="img-responsive side-bar-img" >

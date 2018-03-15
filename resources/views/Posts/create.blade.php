@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('home')
 
 @include('layouts.include.header')
 

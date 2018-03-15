@@ -1,11 +1,15 @@
 @extends('layouts.app')
 
-@include('.layouts.include.header')
+@include('layouts.include.header')
 
 @section('content')
+    <div id="page-content-wrapper">
     <div id="wrapper">
-         @include('.layouts.include.sidebar')
-         @include('.layouts.include.content')
-         @include('.layouts.include.footer');
+
+         @include('layouts.include.sidebar')
+         @include('layouts.include.content')
+         @include('layouts.include.footer');
     </div>
+    </div>
+
 @endsection
