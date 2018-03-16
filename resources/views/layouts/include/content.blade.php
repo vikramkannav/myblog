@@ -33,7 +33,7 @@
                 <img src="/img/logo.png" alt="GoPetie Logo" class="img-responsive">
 
 
-                <h3>Welcome to the .</h3>
+                <h3>Welcome to the India.</h3>
 
 
             </div>

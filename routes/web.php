@@ -21,7 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'PostController@allPost')->name('home');
 Route::get('/{id}/edit', "UserController@edit");
 Route::put('/{id}/update', "UserController@update")->name('endUserUpdate');
 Route::get('/{id}/change-password', "UserController@updatePassword");

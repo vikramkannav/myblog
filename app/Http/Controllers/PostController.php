@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use View;
 use HTML;
 use Illuminate\Support\Facades\Input;
+use App\User;
+use Auth;
 
 class PostController extends Controller
 {
@@ -17,8 +19,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
-        return view('Posts.index')->with('posts',$posts);
+       $user_id = Auth::user()->id;
+       $posts = Post::where('created_by',$user_id)->get();
+       return view('Posts.index')->with('posts',$posts);
     }
 
     /**
@@ -40,6 +43,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
       $posts = new Post($request->all());
+      $posts->created_by=Auth::user()->id;
       $posts->save();
       return redirect('home');
 
@@ -81,6 +85,9 @@ class PostController extends Controller
         $input=$request->all();
         $post = Post::find($id);
         $post->update($input);
+        if($post->errors())
+          dd($post->errors());
+
         return redirect('home');
 
     }
@@ -95,4 +102,12 @@ class PostController extends Controller
     {
         //
     }
+
+    public function allPost()
+    {
+        $posts = Post::all()->where('status','publish');
+        return view('Posts.index')->with('posts',$posts);
+    }
+
+
 }

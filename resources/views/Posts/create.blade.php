@@ -24,7 +24,10 @@
         {{ Form::label('description', 'Description') }}
         {{ Form::textarea('description', Input::old('description'), array('class' => 'form-control','maxlength'=>'55'))}}
     </div>
-
+    <div class="form-group">
+                {{ Form::label('status', 'Status') }}
+                {{ Form::select('status',["publish"=>"publish","unpublish"=>"unpublish"],null ,array('placeholder'=>'Select Status','class' => 'form-control','maxlength'=>'55')) }}
+    </div>
     {{ Form::submit('Create Post!', array('class' => 'btn btn-primary')) }}
 
     {{ Form::close() }}

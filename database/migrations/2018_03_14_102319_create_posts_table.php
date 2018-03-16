@@ -18,6 +18,8 @@ class CreatePostsTable extends Migration
             $table->string('name');
             $table->string('subject');
             $table->string('description');
+            $table->bigInteger('created_by');
+            $table->enum('status',['publish','unpublish'])->default('publish')->nullable();
             $table->timestamps();
         });
     }

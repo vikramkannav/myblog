@@ -47,7 +47,7 @@
 
                         <div class="row ">
                             <div class="col-md-1 form-group">City</div>
-                            <div class="col-md-4 form-group">{{Form::text('city',old('city'),array('id'=>'city','class'=>'form-control field_main','maxlength'=>'55', 'placeholder'=>"Enter first name"))}}
+                            <div class="col-md-4 form-group">{{Form::text('city',old('city'),array('id'=>'city','class'=>'form-control field_main','maxlength'=>'55', 'placeholder'=>"Enter First Name"))}}
                             </div>
                        </div>
                             <div class="clearfix"></div>
@@ -55,10 +55,20 @@
 
                     <div class="row ">
                         <div class="col-md-1 form-group">State</div>
-                        <div class="col-md-4 form-group">{{Form::text('state',old('state'),array('id'=>'state','class'=>'form-control field_main','maxlength'=>'55', 'placeholder'=>"Enter first name"))}}
+                        <div class="col-md-4 form-group">{{Form::text('state',old('state'),array('id'=>'state','class'=>'form-control field_main','maxlength'=>'55', 'placeholder'=>"Enter State Name"))}}
                         </div>
                     </div>
+
                     <div class="clearfix"></div>
+
+
+                    <div class="row ">
+                        <div class="col-md-1 form-group">Country</div>
+                        <div class="col-md-4 form-group">{{Form::text('country',old('zip'),array('id'=>'country','class'=>'form-control field_main','maxlength'=>'55', 'placeholder'=>"Enter Country Name "))}}
+                        </div>
+                    </div>
+
+                        <div class="clearfix"></div>
 
 
                     <div class="row ">
