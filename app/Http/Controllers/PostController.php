@@ -9,6 +9,8 @@ use HTML;
 use Illuminate\Support\Facades\Input;
 use App\User;
 use Auth;
+use Illuminate\Support\Facades\DB;
+use Datatables;
 
 class PostController extends Controller
 {
@@ -21,6 +23,7 @@ class PostController extends Controller
     {
        $user_id = Auth::user()->id;
        $posts = Post::where('created_by',$user_id)->get();
+       $posts = Post::paginate(5);
        return view('Posts.index')->with('posts',$posts);
     }
 
@@ -110,5 +113,17 @@ class PostController extends Controller
         return view('Posts.index')->with('posts',$posts);
     }
 
+    public function applicationsBlade()
+    {
+       return view('Posts.index');
+    }
+
+    public function applications()
+    {
+        $user_id = Auth::user()->id;
+        $posts = Post::where('created_by',$user_id)->get();
+        //$posts = Post::paginate(5);
+        return Datatables::of($posts)->make(true);
+    }
 
 }

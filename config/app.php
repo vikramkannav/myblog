@@ -147,7 +147,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-
+        Yajra\Datatables\DatatablesServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -212,7 +212,7 @@ return [
         'FORM' => Collective\Html\FormFacade::class,
         'HTML' => Collective\Html\HtmlFacade::class,
         'Input' => Illuminate\Support\Facades\Input::class,
-
+        'Datatables' => Yajra\Datatables\Facades\Datatables::class,
     ],
 
 ];

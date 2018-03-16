@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('state')->nullable();
             $table->string('country')->nullable();
             $table->string('zip')->nullable();
+            $table->string('pic')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -72,7 +72,7 @@
 
 
                     <div class="row ">
-                        <div class="col-md-1 form-group">Zip code</div>
+                        <div class="col-md-1 form-group">Zip</div>
                         <div class="col-md-4 form-group">{{Form::text('zip',old('zip'),array('id'=>'zip','class'=>'form-control field_main','maxlength'=>'55', 'placeholder'=>"Enter first name"))}}
                         </div>
 

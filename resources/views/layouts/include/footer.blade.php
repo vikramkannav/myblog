@@ -15,3 +15,20 @@
         © 2017 Copyright India. All Rights Reserved.
     </p>
 </div>
+
+<script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+<script>
+    var ownerColumns = [
+        { data: 'name', name: 'name' },
+
+
+
+
+    ];
+    $('#new-pet-owners-table').DataTable({
+        "processing": true,
+        "serverSide": true,
+        "ajax": '{!! route("pet.applications") !!}',
+        "columns": ownerColumns
+    });
+</script>

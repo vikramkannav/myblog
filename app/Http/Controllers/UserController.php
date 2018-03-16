@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-
-
+use Auth;
+use DB;
+use Hash;
 class UserController extends Controller
 {
     /**
@@ -68,15 +69,24 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-       $input = $request->all();
-       $user = User::find($id);
-       $user->update($input);
-     /*  if($user->errors())
-           return redirect()->back()->withInput()->withErrors($user->errors()->toArray());
-    */
-     return redirect('home');
+
+    public function update(Request $request,$id){
+        $user=Auth::user();
+        $input=$request->all();
+
+         if($request->old_password && $request->new_password){
+            if(Hash::check($input['old_password'], $user->password)){
+                $input['password']=$input['new_password'];
+                $input['password_confirmation']=$input['new_password'];
+            }else
+                return redirect()->back()->withInput()->withErrors(["Old password doesn't match."]);
+        }
+        $user->update($input);
+        if ($user->errors()) {
+                 return redirect()->back()->withInput()->withErrors($user->errors());
+        }
+        return redirect('home');
+
     }
 
     /**
@@ -89,4 +99,17 @@ class UserController extends Controller
     {
         //
     }
+    public function updatePassword(Request $request,$id)
+    {
+      if($request->isMethod('get')){
+        return view('user.change-password');
+  }
+
+    }
+    public function editProfilePic(Request $request,$id)
+    {
+        return view('user.edit-profile-pic');
+    }
+
+
 }

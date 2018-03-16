@@ -32,3 +32,7 @@ Route::post('/my_posts', 'PostController@index');*/
 
 
 Route::resource('posts', 'PostController');
+Route::get('/home', 'PostController@applicationsBlade');
+Route::get('/applications-blade',['as' => 'pet.applications', 'uses' =>  'PostController@applications']);
+Route::get('/{id}/change-password', "UserController@updatePassword");
+Route::get('/{id}/profile-pic', "UserController@editProfilePic");
