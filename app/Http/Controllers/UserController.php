@@ -73,7 +73,10 @@ class UserController extends Controller
        $input = $request->all();
        $user = User::find($id);
        $user->update($input);
-        return redirect('home');
+     /*  if($user->errors())
+           return redirect()->back()->withInput()->withErrors($user->errors()->toArray());
+    */
+     return redirect('home');
     }
 
     /**

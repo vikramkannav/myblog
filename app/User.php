@@ -31,5 +31,15 @@ class User extends Authenticatable
         return $this->hasMany(Post::class,'created_by');
     }
 
-
+    public function getValidationRules()
+    {
+        return [
+             'name' => 'required | min:2 | max:60',
+             'city' => 'required | min:2 | max:60',
+             'state' => 'required | min:2 | max:60',
+             'country' => 'required | min:2 | max:60',
+             'phone' => 'required | digits_between:9,11' ,
+             'zip' => 'required | min:2 | max:60',
+            ];
+    }
 }

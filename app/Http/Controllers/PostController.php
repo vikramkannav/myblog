@@ -45,6 +45,8 @@ class PostController extends Controller
       $posts = new Post($request->all());
       $posts->created_by=Auth::user()->id;
       $posts->save();
+      if($posts->errors())
+          return redirect()->back()->withInput()->withErrors($posts->errors()->toArray());
       return redirect('home');
 
     }
@@ -83,13 +85,12 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
         $input=$request->all();
-        $post = Post::find($id);
-        $post->update($input);
-        if($post->errors())
-          dd($post->errors());
+        $posts = Post::find($id);
+        $posts->update($input);
+        if($posts->errors())
+            return redirect()->back()->withInput()->withErrors($posts->errors()->toArray());
 
         return redirect('home');
-
     }
 
     /**

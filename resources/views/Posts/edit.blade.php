@@ -14,9 +14,16 @@
     </div>
 
     <div class="form-group">
+        {{ Form::label('subject', 'Subject') }}
+        {{ Form::text('subject', null, array('class' => 'form-control')) }}
+    </div>
+
+    <div class="form-group">
         {{ Form::label('description', 'Description') }}
         {{ Form::textarea('description', null, array('class' => 'form-control')) }}
     </div>
+
+
     <div class="form-group">
         {{ Form::label('status', 'Status') }}
         {{ Form::select('status',['publish'=>"publish",'unpublish'=>"unpublish"],null ,array('placeholder'=>'Select Status','class' => 'form-control','maxlength'=>'55')) }}
